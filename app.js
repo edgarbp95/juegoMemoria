@@ -78,8 +78,6 @@ const voltearCartas = ()=>{
                     segundaCartaHidden.disabled = true;
                     jugada=0;
                     setTimeout(incrementarAcierto,500);
-                    
-                    
                 } else{
                     retornar = setTimeout(()=>{
                     primeraCartaCover.style.animation = "devolverCartas 0.5s forwards";
