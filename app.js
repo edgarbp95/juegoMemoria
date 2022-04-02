@@ -23,10 +23,13 @@ const revolverCartas = ()=>{
 
 const incrementarAcierto = ()=>{
     inputAciertos.value++;
+    if(inputAciertos.value==8){
+        ganaste();
+    } 
 }
 
 const ganaste = ()=>{
-    msjEstado.innerHTML = "¡Ganasteeeeeeeeeee!"
+    msjEstado.innerHTML = "¡Ganasteeeeeeeeeee!";
 }
 
 const perdiste = ()=>{
@@ -77,6 +80,7 @@ const voltearCartas = ()=>{
                     primeraCartaHidden.disabled = true;
                     segundaCartaHidden.disabled = true;
                     jugada=0;
+                    
                     setTimeout(incrementarAcierto,500);
                 } else{
                     retornar = setTimeout(()=>{
@@ -96,11 +100,9 @@ const voltearCartas = ()=>{
                     
                 },2000);
                 }
-            }
 
-            if(inputAciertos.value==8){
-                ganaste();
-            }
+                
+            }       
 
         })
     }
@@ -111,6 +113,7 @@ const configurarJuego = ()=>{
     inputIntentos.value=10;
     clearTimeout(retornar);
     jugada = 0;
+    msjEstado.innerHTML = ""
     for(let i=0;i<cardCover.length;i++){
         
         cardHidden[i].disabled = false;
@@ -124,8 +127,6 @@ const configurarJuego = ()=>{
 const comenzarJuego = ()=>{
     
     configurarJuego();
-
-    revolverCartas();
 
     voltearCartas();
 
