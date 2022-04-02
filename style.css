@@ -311,6 +311,9 @@ button{
 
 @media only screen and (max-width:500px){
     
+    body{
+        height: 110vh;
+    }
 
     .card_cover{
         width:70px;
@@ -343,6 +346,19 @@ button{
         color: var(--White);
         margin-top: 10px;
     
+    }
+
+    input{
+        margin-top: 0;
+        
+    }
+
+    #intentosRestantes {
+        font-size: 0.9rem;
+    }
+
+    #aciertos{
+        font-size: 0.9rem;
     }
     
 }
